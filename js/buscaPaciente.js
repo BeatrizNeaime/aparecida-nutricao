@@ -1,6 +1,7 @@
 var botaoAdicionar = document.querySelector("#buscar-paciente");
 
-botaoAdicionar.addEventListener("click", function() {
+botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault();
     console.log("click");
     var xhr = new XMLHttpRequest();
 
