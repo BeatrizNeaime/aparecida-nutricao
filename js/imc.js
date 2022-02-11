@@ -3,32 +3,35 @@ function calculaIMC(peso, altura) {
     return imc.toFixed(2);
 }
 
-function validaH(altura) {
-    if (0 > altura && altura >= 3.00) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
 function validaP(peso) {
-    console.log(`func peso: ${peso}`);
-    if (0 < peso && peso > 150) {
-        return false;
-    } else {
+    if (0 < peso && peso <= 150) {
         return true;
+    } else {
+        return false;
     }
 }
 
+function validaH(altura) {
+    if (0 < altura && altura < 3.00) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function validaPessoa(paciente) {
     var erros = [];
-
     if (!validaH(paciente.altura)) {
         erros.push("Altura Inválida!");
-    }
+    }  
     if (!validaP(paciente.peso)) {
         erros.push("Peso Inválido!");
+    }  
+    if(paciente.nome.length == 0){
+        erros.push("Insira um nome");
+    }
+    if(paciente.gordura.length == 0){
+        erros.push("Insira o percentual de gordura");
     }
 
     return erros;
@@ -36,15 +39,14 @@ function validaPessoa(paciente) {
 
 function exibeErro(erro) {
     var ul = document.querySelector("#erros");
-
+    ul.innerHTML = ""
     erro.forEach(function (alerta) {
         var li = document.createElement("li");
         li.textContent = alerta;
         ul.appendChild(li);
+        li.classList.add("mensagem-erro");
     });
 }
-
-
 
 var paciente = document.querySelectorAll(".paciente");
 
@@ -66,7 +68,6 @@ for (var i = 0; i < paciente.length; i++) {
         tdpeso.textContent = "Peso inválido!";
         pacientes.classList.add("paciente-invalido");
     }
-
 
     var imc = calculaIMC(peso, altura);
     tabelaIMC.textContent = imc;

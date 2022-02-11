@@ -46,8 +46,9 @@ botao.addEventListener("click", function (event) {
     var form = document.querySelector("#form-adiciona");
     var pacient = getHTML(form);
     var tabela = document.querySelector("#tabela-pacientes");
+    var ul = document.querySelector("#erros")
 
-    var erros = validaPessoa(paciente);
+    var erros = validaPessoa(pacient);
     if (erros.length > 0) {
         exibeErro(erros);
         return;
@@ -57,4 +58,5 @@ botao.addEventListener("click", function (event) {
     tabela.appendChild(pacienteTR);
 
     form.reset();
+    ul.innerHTML = "";
 });

@@ -16,13 +16,10 @@ header{
 
 header h1{
 	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
+
 }
 header h2{
 	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
 }
 
 header .container:before{
@@ -125,8 +122,9 @@ button[disabled=disabled], button:disabled {
 
 }
 
-.adicionar-paciente{
+#adicionar-paciente, #buscar-paciente{
     margin-top: 30px;
+	width: 50%;
 }
 
 .campo-invalido{
@@ -138,3 +136,34 @@ button[disabled=disabled], button:disabled {
 	font-weight: bold;
 	color: white;
 }
+
+.removido{
+	opacity: 0;
+	transition: .5s;
+}
+
+.busca{
+	display: flex;
+	align-items: center;
+	position: relative;
+	top: 30px; 
+}
+
+.busca input{
+	margin-left: 10px;
+}
+
+.invisivel{
+	display: none;
+}
+
+.botoes{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.botoes button{
+	margin-right: 10px;
+}
+

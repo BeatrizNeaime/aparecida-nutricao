@@ -14,6 +14,10 @@
 	<header>
 		<div class="container">
 			<h1 class="titulo">Aparecida Nutrição</h1>
+			<div class="busca">
+				<label for="buscar">Filtrar:</label>
+				<input type="text" id="buscar">
+			</div>
 		</div>
 	</header>
 	<main>
@@ -98,13 +102,19 @@
 				<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente"
 					class="campo campo-medio">
 			</div>
+			<div class="botoes">
+				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+				<button id="buscar-paciente" class="botao bto-principal">Buscar Paciente</button>
+			</div>
 
-			<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
 		</form>
 	</section>
 
 </body>
 <script src="./js/form.js"></script>
 <script src="./js/imc.js"></script>
+<script src="./js/remove-paciente.js"></script>
+<script src="./js/filtro.js"></script>
+<script src="./js/buscaPaciente.js"></script>
 
 </html>
