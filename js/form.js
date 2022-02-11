@@ -38,24 +38,30 @@ function criaTabela(pacient) {
 
 }
 
+function montaTabela(paciente){
+    var pacienteTR = criaTabela(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTR);
+
+}
+
 var botao = document.querySelector("#adicionar-paciente");
 
 
 botao.addEventListener("click", function (event) {
     event.preventDefault();
     var form = document.querySelector("#form-adiciona");
-    var pacient = getHTML(form);
-    var tabela = document.querySelector("#tabela-pacientes");
+    var paciente = getHTML(form);
     var ul = document.querySelector("#erros")
 
-    var erros = validaPessoa(pacient);
+    var erros = validaPessoa(paciente);
     if (erros.length > 0) {
         exibeErro(erros);
         return;
     }
 
-    var pacienteTR = criaTabela(pacient);
-    tabela.appendChild(pacienteTR);
+
+    montaTabela(paciente);
 
     form.reset();
     ul.innerHTML = "";

@@ -8,8 +8,15 @@ botaoAdicionar.addEventListener("click", function(event) {
     xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
 
     xhr.addEventListener("load", function() {
-        console.log(xhr.responseText);
+       var resposta = xhr.response;
+       var pacientes = JSON.parse(resposta);
+       console.log(pacientes);
     });
 
     xhr.send();
+
+    pacientes.forEach(function(){
+        montaTabela(paciente);
+    });
+
 });
