@@ -41,6 +41,7 @@ section{
 }
 
 section h2{
+	margin-top: 10px;
 	font-size: 3em;
 	display: block;
 	padding-bottom: .5em;
