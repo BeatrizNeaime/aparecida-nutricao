@@ -42,7 +42,6 @@ function montaTabela(paciente){
     var pacienteTR = criaTabela(paciente);
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTR);
-
 }
 
 var botao = document.querySelector("#adicionar-paciente");
